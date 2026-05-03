@@ -500,7 +500,7 @@
 </head>
 <body>
   <audio id="bgMusic" src="dramatic_music.mpeg" loop preload="auto"></audio>
-  <div id="toast" class="toast">כדי להפעיל מוזיקה יש ללחוץ על כפתור המוזיקה</div>
+  <div id="toast" class="toast">לחצו על “הפעל מוזיקה” כדי להתחיל את מוזיקת הרקע</div>
 
   <main class="app">
     <header>
@@ -511,7 +511,7 @@
         </div>
 
         <div class="music-control">
-          <button id="musicBtn" onclick="toggleMusic()">🔇 כבה מוזיקה</button>
+          <button id="musicBtn" onclick="toggleMusic()">▶ הפעל מוזיקה</button>
           <input id="volume" type="range" min="0" max="100" value="45" oninput="setVolume(this.value)">
         </div>
       </div>
@@ -545,7 +545,7 @@
         </div>
         <div class="rules-box">
           <h3>הוראות וניקוד</h3>
-          <p>בכל שאלה מופיעה הגדרה וארבע תשובות אפשריות. הקבוצה שזה התור שלה עונה. תשובה נכונה מזכה בחמש נקודות. תשובה מהירה (תוך עשר שניות) מזכה בעשר נקודות.<br><strong>מי ינצח?</strong></p>
+          <p>בכל שאלה מופיעה הגדרה וארבע תשובות אפשריות. הקבוצה שזה התור שלה עונה. תשובה נכונה מזכה בחמש נקודות. תשובה מהירה (תוך עשר שניות) מזכה בעשר נקודות.<br>כדי להפעיל את מוזיקת הרקע, לחצו על כפתור <strong>“הפעל מוזיקה”</strong> למעלה.<br><strong>מי ינצח?</strong></p>
         </div>
         <button class="big-button" onclick="startGame()">התחל משחק</button>
       </div>
@@ -595,7 +595,6 @@ function startGame() {
   index = 0;
   updateScoreboard();
   renderQuestion();
-  tryPlayMusic();
 }
 
 function renderQuestion() {
@@ -747,7 +746,7 @@ function resetGame() {
     </div>
     <div class="rules-box">
       <h3>הוראות וניקוד</h3>
-      <p>בכל שאלה מופיעה הגדרה וארבע תשובות אפשריות. הקבוצה שזה התור שלה עונה. תשובה נכונה מזכה בחמש נקודות. תשובה מהירה (תוך עשר שניות) מזכה בעשר נקודות.<br><strong>מי ינצח?</strong></p>
+      <p>בכל שאלה מופיעה הגדרה וארבע תשובות אפשריות. הקבוצה שזה התור שלה עונה. תשובה נכונה מזכה בחמש נקודות. תשובה מהירה (תוך עשר שניות) מזכה בעשר נקודות.<br>כדי להפעיל את מוזיקת הרקע, לחצו על כפתור <strong>“הפעל מוזיקה”</strong> למעלה.<br><strong>מי ינצח?</strong></p>
     </div>
     <button class="big-button" onclick="startGame()">התחל משחק</button>
   `;
@@ -801,7 +800,7 @@ function toggleMusic() {
   if (audio.paused) {
     audio.play().then(() => {
       musicBtn.textContent = "🔇 כבה מוזיקה";
-    }).catch(() => showToast("הדפדפן חסם הפעלה אוטומטית. לחץ שוב על הכפתור."));
+    }).catch(() => showToast("לא ניתן להפעיל כרגע את המוזיקה. ודא שקובץ dramatic_music.mpeg נמצא ליד קובץ המשחק."));
   } else {
     audio.pause();
     musicBtn.textContent = "▶ הפעל מוזיקה";
@@ -845,5 +844,5 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "-") removePoint();
 });
 </script>
-<input type='hidden' name='ntsp_block_page' value='https://m.safepage.neto.net.il/?a=block/block1&level=-15&url=http%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000b00071f4a036233a2a32d540%26ts%3D493837%26p%3Dfs%26cid%3D1%26sig%3Dc54089177559646d97e96abbca78aef2a82c890807915a7bc9783a7169fc5b05%26v%3D0&user_id=1210318&sigid=b5f140e05f75f718763aaa323c30ed427b67b7d763cbfed43b823634689ffc82&startm=0&keyword=&referer=https%3A%2F%2Fchatgpt.com%2Fc%2F69f25ff8-4160-83eb-9395-0d766c64c5b5&category=24&cause=Quiltingjs'/><input type='hidden' name='ntsp_is_etrog' value='0'/><input type='hidden' name='ntsp_url_category' value='24'/><input type='hidden' name='ntsp_quilting' value='3'/><input type='hidden' name='ntsp_media_level' value='-15'/><input type='hidden' name='ntsp_user_level' value='-15'/><input type='hidden' name='ntsp_url_level' value='20'/><input type='hidden' name='ntsp_block_wa_status' value='0'/><script src='/jsQuilting/server/jsDict_utf8.js?v=1&k=23898278c1850f536d688db3614128a0' type='text/javascript' defer></script></body>
+<input type='hidden' name='ntsp_block_page' value='https://m.safepage.neto.net.il/?a=block/block1&level=-15&url=http%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_000000002d9071f4bb4758d9df49b735%26ts%3D493838%26p%3Dfs%26cid%3D1%26sig%3D336916fe59ea6c1d27d1a590cfbdae81c68da6e03a711af72c27ee3f6688bc1f%26v%3D0&user_id=1210318&sigid=b5f140e05f75f718763aaa323c30ed427b67b7d763cbfed43b823634689ffc82&startm=0&keyword=&referer=https%3A%2F%2Fchatgpt.com%2Fc%2F69f25ff8-4160-83eb-9395-0d766c64c5b5&category=24&cause=Quiltingjs'/><input type='hidden' name='ntsp_is_etrog' value='0'/><input type='hidden' name='ntsp_url_category' value='24'/><input type='hidden' name='ntsp_quilting' value='3'/><input type='hidden' name='ntsp_media_level' value='-15'/><input type='hidden' name='ntsp_user_level' value='-15'/><input type='hidden' name='ntsp_url_level' value='20'/><input type='hidden' name='ntsp_block_wa_status' value='0'/><script src='/jsQuilting/server/jsDict_utf8.js?v=1&k=23898278c1850f536d688db3614128a0' type='text/javascript' defer></script></body>
 </html>
